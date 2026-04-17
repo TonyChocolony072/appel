@@ -1,0 +1,155 @@
+🖥️ Event Viewer
+🔍 Wat doet het?
+
+Logt alles wat er op Windows gebeurt:
+
+logins
+errors/crashes
+systeemactiviteiten
+⚙️ Hoe gebruik je het?
+Windows + R → eventvwr
+Ga naar:
+Security → logins
+System → crashes
+Application → app errors
+🎯 Wat moet je kunnen vinden (examen!)
+4624 → succesvolle login
+4625 → mislukte login
+Veel mislukte logins → brute force aanval
+Errors rond dezelfde tijd → mogelijke malware
+
+👉 Typische examenvraag:
+“Hoe detecteer je een brute force aanval?” → via meerdere 4625 events
+
+🛡️ Wordfence
+🔍 Wat doet het?
+
+Beveiligt WordPress:
+
+firewall
+malware scanner
+login bescherming
+⚙️ Hoe gebruik je het?
+Installeren in WordPress
+Ga naar Scan → Start Scan
+Bekijk resultaten
+🎯 Wat moet je kunnen vinden
+Geïnfecteerde bestanden
+Kwetsbare plugins
+Onbekende admin accounts
+
+👉 Examenvraag:
+“Hoe detecteer je malware op een WordPress site?” → Wordfence scan
+
+🔎 WPScan
+🔍 Wat doet het?
+
+Zoekt bekende kwetsbaarheden in WordPress
+
+⚙️ Hoe gebruik je het?
+wpscan --url https://site.nl
+
+Extra:
+
+wpscan --url https://site.nl --enumerate u
+🎯 Wat moet je kunnen vinden
+Verouderde plugins/themes
+Bekende CVE’s (kwetsbaarheden)
+Gebruikersnamen (voor brute force)
+
+👉 Examenvraag:
+“Hoe vind je kwetsbare plugins?” → WPScan
+
+🧱 Microsoft Defender Antivirus
+🔍 Wat doet het?
+
+Detecteert en blokkeert malware
+
+⚙️ Hoe gebruik je het?
+Open Windows Security
+Virus & threat protection
+Run scan
+🎯 Wat moet je kunnen vinden
+Virussen / trojans
+Ransomware
+Verdachte bestanden
+
+👉 Examenvraag:
+“Welke tool gebruik je voor malware detectie op Windows?” → Defender
+
+🌐 Nmap
+🔍 Wat doet het?
+
+Scant netwerken:
+
+open poorten
+services
+versies
+⚙️ Hoe gebruik je het?
+nmap 192.168.1.1
+
+Geavanceerd:
+
+nmap -sV -A 192.168.1.1
+🎯 Wat moet je kunnen vinden
+Open poorten (bijv. 22, 80, 443)
+Draaiende services (SSH, HTTP)
+Mogelijke aanvalspunten
+
+👉 Examenvraag:
+“Hoe ontdek je open poorten op een server?” → Nmap scan
+
+🔐 Network-Based Security Analysis (NBSA)
+🔍 Wat doet het?
+
+Analyseert netwerkverkeer om aanvallen te detecteren
+
+⚙️ Hoe gebruik je het?
+
+Met tools zoals:
+
+Wireshark
+Snort
+
+Basis stappen:
+
+Capture starten
+Filteren (http, dns)
+Analyse
+🎯 Wat moet je kunnen vinden
+Verdachte IP-adressen
+Data leaks
+Ongewone traffic (bijv. veel requests)
+
+👉 Examenvraag:
+“Hoe detecteer je verdachte netwerkactiviteit?” → packet analysis
+
+🧠 🔥 SAMENVATTING (BELANGRIJK VOOR JE EXAMEN)
+Tool    Wat detecteer je
+Event Viewer    logins, brute force, errors
+Wordfence    malware & kwetsbare WP bestanden
+WPScan    kwetsbaarheden (CVE’s)
+Defender    virussen/malware
+Nmap    open poorten & services
+NBSA    verdachte netwerkactiviteit
+🎓 Hoe combineer je dit (EXAMEN-INZICHT)
+
+Docenten testen vaak of je tools kunt combineren:
+
+Scenario: website gehackt
+
+Wordfence → malware vinden
+WPScan → kwetsbaarheid vinden
+
+Scenario: verdachte login
+
+Event Viewer → login logs checken
+
+Scenario: netwerk attack
+
+Nmap → open poorten vinden
+Wireshark → verkeer analyseren
+⚠️ Belangrijk (komt vaak terug)
+Nmap / WPScan:
+❌ illegaal zonder toestemming
+✅ alleen eigen systemen
